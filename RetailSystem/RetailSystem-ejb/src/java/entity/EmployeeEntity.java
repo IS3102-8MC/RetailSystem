@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity(name="Employee")
 public class EmployeeEntity implements Serializable {
@@ -23,6 +24,9 @@ public class EmployeeEntity implements Serializable {
     private String staffAccessRights;
     private Long rID;
     private Long locationID;
+    
+    @OneToOne(mappedBy = "employee")
+    private PurchaseOrderEntity purchaseOrder = new PurchaseOrderEntity();
     
     // Getter & Setter
     public Long getStaffID() {

@@ -29,7 +29,23 @@ public class RetailerEntity implements Serializable {
     private Collection<TransactionEntity> transaction = new ArrayList<TransactionEntity>();
     @OneToMany(cascade={CascadeType.ALL}, mappedBy="retailer")
     private Collection<ItemEntity> items = new ArrayList<ItemEntity>();
-
+    @OneToMany(cascade={CascadeType.ALL}, mappedBy="retailer")
+    private Collection<ItemStatusEntity> itemStatus = new ArrayList<ItemStatusEntity>();
+    @OneToMany(cascade={CascadeType.ALL}, mappedBy="retailer")
+    private Collection<RFIDEntity> rfid = new ArrayList<RFIDEntity>();
+    @OneToMany(cascade={CascadeType.ALL}, mappedBy="retailer")
+    private Collection<PurchaseOrderEntity> purchaseOrder = new ArrayList<PurchaseOrderEntity>();
+    @OneToMany(cascade={CascadeType.ALL}, mappedBy="retailer")
+    private Collection<PurchaseOrderLineEntity> purchaseOrderLine = new ArrayList<PurchaseOrderLineEntity>();
+    @OneToMany(cascade={CascadeType.ALL}, mappedBy="retailer")
+    private Collection<InventoryEntity> inventory = new ArrayList<InventoryEntity>();
+    @OneToMany(cascade={CascadeType.ALL}, mappedBy="retailer")
+    private Collection<BatchEntity> batch = new ArrayList<BatchEntity>();
+    @OneToMany(cascade={CascadeType.ALL}, mappedBy="retailer")
+    private Collection<LocationEntity> location = new ArrayList<LocationEntity>();
+    @OneToMany(cascade={CascadeType.ALL}, mappedBy="retailer")
+    private Collection<ShelfEntity> shelf = new ArrayList<ShelfEntity>();
+    
     // Getter & Setter
     public Long getrID() {
         return rID;
